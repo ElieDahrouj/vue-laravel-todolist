@@ -1,6 +1,6 @@
 <template>
     <div class="container d-flex flex-wrap justify-content-center">
-        <div v-for="task in tasks" :key="task.id" class="card m-2" style="width: 18rem;">
+        <div v-if="tasks.length !== 0" v-for="task in tasks" :key="task.id" class="card m-2" style="width: 18rem;">
             <div class="card-body d-flex flex-column justify-content-between">
                 <p class="card-text">{{task.description}}</p>
                 <div class="d-flex justify-content-start">
@@ -9,6 +9,9 @@
                     <button @click="deleteTask(task.id)" class="btn btn-danger rounded">Delete</button>
                 </div>
             </div>
+        </div>
+        <div v-else class="alert alert-danger m-0" role="alert">
+            Nothing to get
         </div>
     </div>
 </template>
