@@ -44,7 +44,7 @@
                     this.success = false
                 }
                 if(this.$v.description.required){
-                    axios.post('http://api/tasks',{description: this.description})
+                    axios.post('/api/tasks',{description: this.description})
                         .then(res =>{
                             this.success = true
                             this.msgSuccess = res.data
