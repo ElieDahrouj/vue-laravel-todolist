@@ -7,7 +7,7 @@
                 <textarea class="form-control mb-2" id="description" name="description" v-model.trim="$v.description.$model" rows="7">{{this.task.description}}</textarea>
                 <button @click="check" type="button" class="btn btn-success">Valider</button>
             </div>
-            <div v-if="errors.length">
+            <div v-if="failed">
                 <div class="p-3 mb-2 bg-danger text-white rounded"> {{errors[0]}}</div>
             </div>
             <div v-if="success">
@@ -31,6 +31,7 @@
                 errors: [],
                 description:null,
                 success:false,
+                failed:false,
                 task:[],
                 msgSuccess:null
             }
@@ -57,11 +58,13 @@
                 if (this.$v.description.required !==true){
                     this.displayAndCheckError(this.errors,"Description required")
                     this.success = false
+                    this.failed = true
                 }
                 if(this.$v.description.required){
                     axios.put('/api/tasks/'+this.$route.params.id,{description: this.description})
                         .then(res =>{
                             this.success = true
+                            this.failed = false
                             this.msgSuccess = res.data
                         })
                 }
