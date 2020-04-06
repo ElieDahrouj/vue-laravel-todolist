@@ -66,7 +66,7 @@
     <body>
         <div id="app">
             <div>
-                <h1 style="text-align: center">Vue Router Demo App</h1>
+                <h1 style="text-align: center">Task Manager</h1>
                 <p style="text-align: center">
                     <router-link :to="{ name: 'home' }">Home</router-link> |
                     <router-link :to="{ name: 'create' }">Créer une tâche</router-link>
