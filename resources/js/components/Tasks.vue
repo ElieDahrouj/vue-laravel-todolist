@@ -35,7 +35,7 @@
             }
         },
         mounted() {
-            axios.get('http://127.0.0.1:8000/api/tasks')
+            axios.get('/api/tasks')
                 .then(res=>{
                     this.tasks = res.data
                 })
