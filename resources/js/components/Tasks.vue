@@ -24,7 +24,7 @@
         },
         methods:{
             deleteTask(param){
-                axios.delete('http://127.0.0.1:8000/api/tasks/'+param)
+                axios.delete('/api/tasks/'+param)
                     .then(res=>{
                         this.tasks.forEach(task => {
                             if (task.id === param) {

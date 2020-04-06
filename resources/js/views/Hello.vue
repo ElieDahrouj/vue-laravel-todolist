@@ -22,7 +22,7 @@
             }
         },
         mounted() {
-            axios.get('http://127.0.0.1:8000/api/tasks/'+this.$route.params.id)
+            axios.get('/api/tasks/'+this.$route.params.id)
                 .then(res => {
                     this.task = res.data
                 })

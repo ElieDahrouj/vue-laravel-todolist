@@ -41,7 +41,7 @@
             },
         },
         mounted() {
-            axios.get('http://127.0.0.1:8000/api/tasks/'+this.$route.params.id)
+            axios.get('/api/tasks/'+this.$route.params.id)
                 .then(res => {
                     this.task = res.data
                     this.description = res.data.description
@@ -59,7 +59,7 @@
                     this.success = false
                 }
                 if(this.$v.description.required){
-                    axios.put('http://127.0.0.1:8000/api/tasks/'+this.$route.params.id,{description: this.description})
+                    axios.put('/api/tasks/'+this.$route.params.id,{description: this.description})
                         .then(res =>{
                             this.success = true
                             this.msgSuccess = res.data
