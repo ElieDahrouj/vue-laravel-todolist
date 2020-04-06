@@ -14,7 +14,7 @@
         </div>
         <div v-else class="d-flex justify-content-center">
             <div class="alert alert-info m-0" style="width: 380px; text-align: center" role="alert">
-                Nothing to get
+                <b>Nothing to get</b>
             </div>
         </div>
     </div>
