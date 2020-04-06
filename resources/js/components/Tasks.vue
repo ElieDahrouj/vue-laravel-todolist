@@ -13,7 +13,7 @@
             </div>
         </div>
         <div v-else class="d-flex justify-content-center">
-            <div class="alert alert-danger m-0" style="width: 380px;" role="alert">
+            <div class="alert alert-danger m-0" style="width: 380px; text-align: center" role="alert">
                 Nothing to get
             </div>
         </div>
